@@ -1,11 +1,18 @@
 # Configuration for creating netlist from Kicad schematiic
 
 [default]
+kicadCmdLoc = "C:/PROGRA~1/kicad/7.0/bin/kicad-cli.exe"
+schematicLoc = "."
+schematicName = "my_schematic.kicad_sch"
+netlistLoc = "."
+netlistName = "my_netlist.cir"
+deleteForwardSlashes = true
+
 
 [laser_driver]
 kicadCmdLoc = "C:/PROGRA~1/kicad/7.0/bin/kicad-cli.exe"
-schematicLoc = "G:/My Drive/_TechSharpen/ngspice_work/projects/kicad_netlister/kicad_sim_examples/laser_driver"
+schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/laser_driver"
 schematicName = "laser_driver.kicad_sch"
-netlistLoc = "G:/My Drive/_TechSharpen/ngspice_work/projects/kicad_netlister"
+netlistLoc = "."
 netlistName = "laser_driver.cir"
 deleteForwardSlashes = true

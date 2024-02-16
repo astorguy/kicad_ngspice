@@ -1,23 +1,30 @@
 """initialize and run Kicad cli to generate Ngspice netlist"""
 
-import toml
-import subprocess
-from subprocess import CompletedProcess
-from pathlib import Path
 import os
+import subprocess
+import tomllib
+from pathlib import Path
+from subprocess import CompletedProcess
+
+# which schematic to netlist, settings must be present in ki2ng.toml file
+# WHICH_SCH = "default"
+WHICH_SCH = "laser_driver"
 
 # read in the config file, toml format
+with open("ki2ng.toml", "rb") as file:
+    config = tomllib.load(file)
 
-
-
-
+# set these constants from the config file
+SCH_LOCATION = Path(config[WHICH_SCH]["schematicLoc"])
+SCH_FILENAME = SCH_LOCATION / config[WHICH_SCH]["schematicName"]
+NETLIST_LOCATION = Path(config[WHICH_SCH]["netlistLoc"])
+NETLIST_FILENAME = NETLIST_LOCATION / config[WHICH_SCH]["netlistName"]
+DELETE_FORWARD_SLASHES: bool = config[WHICH_SCH]["deleteForwardSlashes"]
 
 # kicad command uses relative paths
 PROGRAM_PATH = Path(os.curdir)
 SCH_FILENAME_REL = Path(os.path.relpath(SCH_FILENAME, PROGRAM_PATH))
 NETLIST_FILENAME_REL = Path(os.path.relpath(NETLIST_FILENAME, PROGRAM_PATH))
-
-DELETE_FORWARD_SLASHES = config["deleteForwardSlashes"]
 
 
 class KicadNetlist:
@@ -83,10 +90,10 @@ def main() -> None:
 
     # construct the kicad cmd
     my_kicadcmd = KicadNetlist(KICAD_CMD, SCH_FILENAME_REL, NETLIST_FILENAME_REL)
-    print(my_kicadcmd)  # print out the kicad cmd, though not necessary
-    my_kicadcmd.run()  # run the kicad cmd
-    if DELETE_FORWARD_SLASHES:
-        my_kicadcmd.delete_forward_slashes()  # delete forward slashes in node names
+    # print(my_kicadcmd)  # print out the kicad cmd, though not necessary
+    # my_kicadcmd.run()  # run the kicad cmd
+    # if DELETE_FORWARD_SLASHES:
+    #     my_kicadcmd.delete_forward_slashes()  # delete forward slashes in node names
 
 
 if __name__ == "__main__":
