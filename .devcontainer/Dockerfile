@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/devcontainers/python:3.12-bookworm
 
 WORKDIR /app
 
-# COPY sources.list /etc/apt/sources.list
+COPY bookworm-backports.list /etc/apt/sources.list.d/bookworm-backports.list
 
 # install ngspice
 RUN apt-get update && \
