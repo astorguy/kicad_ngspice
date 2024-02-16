@@ -6,12 +6,15 @@ import tomllib
 from pathlib import Path
 from subprocess import CompletedProcess
 
-# which schematic to netlist, settings must be present in ki2ng.toml file
+# tell me where to find the config file
+CONFIG_FILENAME = Path("/workspaces/kicad_ngspice/ki2ng.toml")
+
+# which schematic to netlist, settings must be present in config toml file
 # WHICH_SCH = "default"
 WHICH_SCH = "laser_driver"
 
 # read in the config file, toml format
-with open("ki2ng.toml", "rb") as file:
+with open(CONFIG_FILENAME, "rb") as file:
     config = tomllib.load(file)
 
 # set these constants from the config file
