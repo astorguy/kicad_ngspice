@@ -15,6 +15,7 @@ with open("ki2ng.toml", "rb") as file:
     config = tomllib.load(file)
 
 # set these constants from the config file
+KICAD_CMD = Path(config[WHICH_SCH]["kicadCmd"])
 SCH_LOCATION = Path(config[WHICH_SCH]["schematicLoc"])
 SCH_FILENAME = SCH_LOCATION / config[WHICH_SCH]["schematicName"]
 NETLIST_LOCATION = Path(config[WHICH_SCH]["netlistLoc"])
@@ -90,7 +91,7 @@ def main() -> None:
 
     # construct the kicad cmd
     my_kicadcmd = KicadNetlist(KICAD_CMD, SCH_FILENAME_REL, NETLIST_FILENAME_REL)
-    # print(my_kicadcmd)  # print out the kicad cmd, though not necessary
+    print(my_kicadcmd)  # print out the kicad cmd, though not necessary
     # my_kicadcmd.run()  # run the kicad cmd
     # if DELETE_FORWARD_SLASHES:
     #     my_kicadcmd.delete_forward_slashes()  # delete forward slashes in node names

@@ -1,7 +1,7 @@
 # Configuration for creating netlist from Kicad schematiic
 
 [default]
-kicadCmdLoc = "C:/PROGRA~1/kicad/7.0/bin/kicad-cli.exe"
+kicadCmd = "/usr/bin/kicad"
 schematicLoc = "."
 schematicName = "my_schematic.kicad_sch"
 netlistLoc = "."
@@ -10,7 +10,7 @@ deleteForwardSlashes = true
 
 
 [laser_driver]
-kicadCmdLoc = "C:/PROGRA~1/kicad/7.0/bin/kicad-cli.exe"
+kicadCmd = "/usr/bin/kicad"
 schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/laser_driver"
 schematicName = "laser_driver.kicad_sch"
 netlistLoc = "."
