@@ -31,3 +31,27 @@ schematicName = "rectifier.kicad_sch"
 netlistLoc = "."
 netlistName = "rectifier.cir"
 deleteForwardSlashes = true
+
+[sallen_key]
+kicadCmd = "/usr/bin/kicad-cli"
+schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/sallen_key"
+schematicName = "sallen_key.kicad_sch"
+netlistLoc = "."
+netlistName = "sallen_key.cir"
+deleteForwardSlashes = true
+
+[subsheets]
+kicadCmd = "/usr/bin/kicad-cli"
+schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/subsheets"
+schematicName = "subsheets.kicad_sch"
+netlistLoc = "."
+netlistName = "subsheets.cir"
+deleteForwardSlashes = true
+
+[v_i_sources]
+kicadCmd = "/usr/bin/kicad-cli"
+schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/v_i_sources"
+schematicName = "v_i_sources.kicad_sch"
+netlistLoc = "."
+netlistName = "v_i_sources.cir"
+deleteForwardSlashes = true
