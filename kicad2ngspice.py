@@ -11,11 +11,11 @@ CONFIG_FILENAME = Path("/workspaces/kicad_ngspice/ki2ng.toml")
 
 # which schematic to netlist, settings must be present in config toml file
 # WHICH_SCH = "default"
-# WHICH_SCH = "laser_driver"
+WHICH_SCH = "laser_driver"
 # WHICH_SCH = "pspice"
 # WHICH_SCH = "rectifier"
 # WHICH_SCH = "sallen_key"
-WHICH_SCH = "subsheets"
+# WHICH_SCH = "subsheets"
 # WHICH_SCH = "v_i_sources"
 
 # read in the config file, toml format
@@ -36,8 +36,8 @@ SCH_FILENAME_REL = Path(os.path.relpath(SCH_FILENAME, PROGRAM_PATH))
 NETLIST_FILENAME_REL = Path(os.path.relpath(NETLIST_FILENAME, PROGRAM_PATH))
 
 
-class KicadNetlist:
-    """KiCad cmd"""
+class Kicad:
+    """KiCad netlist export command"""
 
     def __init__(
         self, kicad_cmd: Path, sch_filename: Path, netlist_filename: Path
@@ -101,7 +101,7 @@ def main() -> None:
     """main"""
 
     # construct the kicad cmd
-    my_kicadcmd = KicadNetlist(KICAD_CMD, SCH_FILENAME_REL, NETLIST_FILENAME_REL)
+    my_kicadcmd = Kicad(KICAD_CMD, SCH_FILENAME_REL, NETLIST_FILENAME_REL)
     print(my_kicadcmd)  # print out the kicad cmd, though not necessary
 
     my_kicadcmd.run()  # run the kicad cmd
