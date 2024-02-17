@@ -44,9 +44,12 @@ class KicadNetlist:
         # construct the command
         self.cmd_args = [f"{self.kicad_cmd}"]
         self.cmd_args.append("sch")
-        self.cmd_args.append("export netlist")
-        self.cmd_args.append(f"--output {self.netlist_filename}")
-        self.cmd_args.append("--format spice")
+        self.cmd_args.append("export")
+        self.cmd_args.append("netlist")
+        self.cmd_args.append(f"--output")
+        self.cmd_args.append(f"{self.netlist_filename}")
+        self.cmd_args.append("--format")
+        self.cmd_args.append("spice")
         self.cmd_args.append(f"{self.sch_filename}")
         self.cmd: str = " ".join(str(item) for item in self.cmd_args)
 
@@ -60,7 +63,7 @@ class KicadNetlist:
 
     def run(self) -> CompletedProcess[bytes]:
         """execute the kicad cmd"""
-        return subprocess.run(self.cmd, check=False)
+        return subprocess.run(self.cmd_args, check=False)
 
     def delete_forward_slashes(self) -> None:
         """Delete forward slashes from all node names in the netlist file."""
@@ -95,9 +98,10 @@ def main() -> None:
     # construct the kicad cmd
     my_kicadcmd = KicadNetlist(KICAD_CMD, SCH_FILENAME_REL, NETLIST_FILENAME_REL)
     print(my_kicadcmd)  # print out the kicad cmd, though not necessary
+
     my_kicadcmd.run()  # run the kicad cmd
-    # if DELETE_FORWARD_SLASHES:
-    #     my_kicadcmd.delete_forward_slashes()  # delete forward slashes in node names
+    if DELETE_FORWARD_SLASHES:
+        my_kicadcmd.delete_forward_slashes()  # delete forward slashes in node names
 
 
 if __name__ == "__main__":
