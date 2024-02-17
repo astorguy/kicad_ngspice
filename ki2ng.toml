@@ -23,3 +23,11 @@ schematicName = "pspice.kicad_sch"
 netlistLoc = "."
 netlistName = "pspice.cir"
 deleteForwardSlashes = true
+
+[rectifier]
+kicadCmd = "/usr/bin/kicad-cli"
+schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/rectifier"
+schematicName = "rectifier.kicad_sch"
+netlistLoc = "."
+netlistName = "rectifier.cir"
+deleteForwardSlashes = true

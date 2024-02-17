@@ -11,7 +11,7 @@ CONFIG_FILENAME = Path("/workspaces/kicad_ngspice/ki2ng.toml")
 
 # which schematic to netlist, settings must be present in config toml file
 # WHICH_SCH = "default"
-WHICH_SCH = "pspice"
+WHICH_SCH = "rectifier"
 
 # read in the config file, toml format
 with open(CONFIG_FILENAME, "rb") as file:
