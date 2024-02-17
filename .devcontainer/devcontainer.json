@@ -9,6 +9,7 @@
   },
   "waitFor": "onCreateCommand",
   // "postCreateCommand": "cp /app/.bashrc ~ && source ~/.bashrc",
+  "postCreateCommand": "alias ki='python /workspaces/kicad_ngspice/kicad2ngspice.py'",
   "customizations": {
     "codespaces": {
       "openFiles": []
