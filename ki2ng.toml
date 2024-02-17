@@ -8,7 +8,6 @@ netlistLoc = "."
 netlistName = "my_netlist.cir"
 deleteForwardSlashes = true
 
-
 [laser_driver]
 kicadCmd = "/usr/bin/kicad-cli"
 schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/laser_driver"
