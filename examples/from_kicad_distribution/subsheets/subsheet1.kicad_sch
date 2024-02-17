@@ -166,6 +166,11 @@
     (uuid de0cb652-bd1c-4098-b680-87b98e9465c8)
   )
 
+  (label "mid" (at 161.29 87.63 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 2dd2cf2d-3600-4b15-81ff-86776d714751)
+  )
+
   (hierarchical_label "in" (shape input) (at 148.59 87.63 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 804c72e7-40fe-4feb-96db-807d74dd32e5)
@@ -173,37 +178,6 @@
   (hierarchical_label "out" (shape output) (at 173.99 87.63 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid ece9b868-f3a9-49d5-861f-6a4ade358ed4)
-  )
-
-  (symbol (lib_id "Device:C") (at 161.29 95.25 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 095e1ba3-2974-4f8f-a24c-c096c7121cf9)
-    (property "Reference" "U" (at 164.211 94.6555 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "1u" (at 164.211 96.4177 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (at 162.2552 99.06 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 161.29 95.25 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid f07d0ccf-31d7-45b6-9241-6513028d66c7))
-    (pin "2" (uuid 6c714c2a-0b1b-4214-b6af-18ad2bb9d064))
-    (instances
-      (project "subsheet1"
-        (path "/653165f2-b395-46b4-92da-df4011983d82"
-          (reference "U") (unit 1)
-        )
-      )
-      (project "subsheets"
-        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/51ab3a6c-36b1-4056-a2d2-39c83ee99c02"
-          (reference "C2") (unit 1)
-        )
-      )
-    )
   )
 
   (symbol (lib_id "power:GND") (at 161.29 99.695 0) (unit 1)
@@ -238,11 +212,11 @@
 
   (symbol (lib_id "Device:R") (at 168.91 87.63 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 24300085-c511-46c8-b0a8-c435ed72984b)
-    (property "Reference" "U" (at 168.91 83.7819 90)
+    (uuid 1110a275-1654-4393-a289-c0f1db5979dd)
+    (property "Reference" "R6" (at 168.91 81.28 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "100" (at 168.91 85.5441 90)
+    (property "Value" "100" (at 168.91 83.82 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "" (at 168.91 89.408 90)
@@ -251,14 +225,9 @@
     (property "Datasheet" "~" (at 168.91 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 5a7bff44-7b50-49bc-a53e-5ad2d385cd23))
-    (pin "2" (uuid 88a023ae-f2fe-4b6c-8112-7557bd5d8594))
+    (pin "1" (uuid 5eaf0e62-86da-4722-9e44-e6351de6d4e6))
+    (pin "2" (uuid fc9eee6a-2ba3-41d0-b5e6-ab9840d07683))
     (instances
-      (project "subsheet1"
-        (path "/653165f2-b395-46b4-92da-df4011983d82"
-          (reference "U") (unit 1)
-        )
-      )
       (project "subsheets"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/51ab3a6c-36b1-4056-a2d2-39c83ee99c02"
           (reference "R6") (unit 1)
@@ -267,13 +236,39 @@
     )
   )
 
+  (symbol (lib_id "Device:C") (at 161.29 95.25 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 62ae829d-8093-4168-b38e-859f10cb8998)
+    (property "Reference" "C2" (at 165.1 93.98 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "1u" (at 165.1 96.52 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "" (at 162.2552 99.06 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 161.29 95.25 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "2" (uuid aad073a2-4f90-4188-bcbb-2ad85746463a))
+    (pin "1" (uuid 0b1355bb-de01-492b-8dba-40558de01e7f))
+    (instances
+      (project "subsheets"
+        (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/51ab3a6c-36b1-4056-a2d2-39c83ee99c02"
+          (reference "C2") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:R") (at 153.67 87.63 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 84fb99cd-cd4d-45fa-95d5-fc922374f67b)
-    (property "Reference" "U" (at 153.67 83.7819 90)
+    (uuid d0ec0e93-c23e-4d9e-948d-c8e2ca8d693c)
+    (property "Reference" "R4" (at 153.67 81.28 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "100" (at 153.67 85.5441 90)
+    (property "Value" "100" (at 153.67 83.82 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "" (at 153.67 89.408 90)
@@ -282,14 +277,9 @@
     (property "Datasheet" "~" (at 153.67 87.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 7dfe7602-471c-4188-a229-9f6d8c682255))
-    (pin "2" (uuid c5681d2b-0499-45c5-831e-5e410cc5e54e))
+    (pin "1" (uuid 35f4f85b-6fbe-449a-9552-b268b70e6951))
+    (pin "2" (uuid 6723f0b1-168e-4681-993c-6ece545ba4ca))
     (instances
-      (project "subsheet1"
-        (path "/653165f2-b395-46b4-92da-df4011983d82"
-          (reference "U") (unit 1)
-        )
-      )
       (project "subsheets"
         (path "/e63e39d7-6ac0-4ffd-8aa3-1841a4541b55/51ab3a6c-36b1-4056-a2d2-39c83ee99c02"
           (reference "R4") (unit 1)
