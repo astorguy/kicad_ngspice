@@ -15,3 +15,11 @@ schematicName = "laser_driver.kicad_sch"
 netlistLoc = "."
 netlistName = "laser_driver.cir"
 deleteForwardSlashes = true
+
+[pspice]
+kicadCmd = "/usr/bin/kicad-cli"
+schematicLoc = "/workspaces/kicad_ngspice/examples/from_kicad_distribution/pspice"
+schematicName = "pspice.kicad_sch"
+netlistLoc = "."
+netlistName = "pspice.cir"
+deleteForwardSlashes = true
